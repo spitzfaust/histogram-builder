@@ -13,7 +13,7 @@ namespace HistogramBuilder.Domain.Tests
 
         public BuildHistogramForImageUseCaseTests()
         {
-            sut = new BuildHistogramForImageUseCase();
+            sut = new BuildHistogramForImageUseCase(new HistogramBuildOptions(1));
         }
 
         [Fact]
