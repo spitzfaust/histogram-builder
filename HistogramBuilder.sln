@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Console", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Domain.Tests", "HistogramBuilder.Domain.Tests\HistogramBuilder.Domain.Tests.csproj", "{B11E7044-7403-4C52-A9DE-B56BDE076473}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Export", "HistogramBuilder.Export\HistogramBuilder.Export.csproj", "{030286BB-459A-4F91-A60B-C4EF3873F3A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{B11E7044-7403-4C52-A9DE-B56BDE076473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B11E7044-7403-4C52-A9DE-B56BDE076473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B11E7044-7403-4C52-A9DE-B56BDE076473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
