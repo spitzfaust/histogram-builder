@@ -8,6 +8,13 @@ namespace HistogramBuilder.Domain
 {
     public class BuildHistogramForImageUseCase : IBuildHistogramForImageUseCase
     {
+        private readonly HistogramBuildOptions histogramBuildOptions;
+
+        public BuildHistogramForImageUseCase(HistogramBuildOptions histogramBuildOptions)
+        {
+            this.histogramBuildOptions = histogramBuildOptions;
+        }
+        
         public async Task<RgbHistogram> Execute(Image image)
         {
             var (reds, greens, blues) = image.Pixels.Aggregate((new List<byte>(), new List<byte>(), new List<byte>()),
