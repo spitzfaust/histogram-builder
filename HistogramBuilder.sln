@@ -1,14 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Domain", "HistogramBuilder.Domain\HistogramBuilder.Domain.csproj", "{B2509BD9-1BE1-4AA9-92E0-CA8026528762}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramBuilder.Domain", "HistogramBuilder.Domain\HistogramBuilder.Domain.csproj", "{B2509BD9-1BE1-4AA9-92E0-CA8026528762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Domain.Contract", "HistogramBuilder.Domain.Contract\HistogramBuilder.Domain.Contract.csproj", "{C2219E9D-5EDA-4AC7-98F5-3F028B1AB566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramBuilder.Domain.Contract", "HistogramBuilder.Domain.Contract\HistogramBuilder.Domain.Contract.csproj", "{C2219E9D-5EDA-4AC7-98F5-3F028B1AB566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Console", "HistogramBuilder.Console\HistogramBuilder.Console.csproj", "{31639694-B2EF-45E8-A66F-73D15F61992A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramBuilder.Console", "HistogramBuilder.Console\HistogramBuilder.Console.csproj", "{31639694-B2EF-45E8-A66F-73D15F61992A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Domain.Tests", "HistogramBuilder.Domain.Tests\HistogramBuilder.Domain.Tests.csproj", "{B11E7044-7403-4C52-A9DE-B56BDE076473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramBuilder.Domain.Tests", "HistogramBuilder.Domain.Tests\HistogramBuilder.Domain.Tests.csproj", "{B11E7044-7403-4C52-A9DE-B56BDE076473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistogramBuilder.Export", "HistogramBuilder.Export\HistogramBuilder.Export.csproj", "{030286BB-459A-4F91-A60B-C4EF3873F3A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramBuilder.Benchmarks", "HistogramBuilder.Benchmarks\HistogramBuilder.Benchmarks.csproj", "{012A472F-3A63-4F52-9799-2F4EAC5ACC94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistogramBuilder.Export", "HistogramBuilder.Export\HistogramBuilder.Export.csproj", "{030286BB-459A-4F91-A60B-C4EF3873F3A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +37,19 @@ Global
 		{B11E7044-7403-4C52-A9DE-B56BDE076473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B11E7044-7403-4C52-A9DE-B56BDE076473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B11E7044-7403-4C52-A9DE-B56BDE076473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012A472F-3A63-4F52-9799-2F4EAC5ACC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012A472F-3A63-4F52-9799-2F4EAC5ACC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012A472F-3A63-4F52-9799-2F4EAC5ACC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012A472F-3A63-4F52-9799-2F4EAC5ACC94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{030286BB-459A-4F91-A60B-C4EF3873F3A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB590376-A539-4EB9-9DE3-E7788F1A111D}
 	EndGlobalSection
 EndGlobal

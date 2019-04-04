@@ -20,6 +20,9 @@ namespace HistogramBuilder.Console
 
             [Option('d', "degree", Required = false, HelpText = "Degree of parallelism.", Default = 1)]
             public int DegreeOfParallelism { get; set; }
+
+            [Option('p', "partitioner", Required = false, HelpText = "Enable the ParallelQuery.Partitioner.", Default = false)]
+            public bool UsePartitioner { get; set; }
         }
 
         public static void Main(string[] args)
@@ -39,7 +42,7 @@ namespace HistogramBuilder.Console
         {
             // Options
             serviceCollection.AddSingleton<HistogramBuildOptions>(provider =>
-                new HistogramBuildOptions(options.DegreeOfParallelism));
+                new HistogramBuildOptions(options.DegreeOfParallelism, options.UsePartitioner));
 
             // UseCases
             serviceCollection.AddSingleton<IBuildHistogramForImageUseCase, BuildHistogramForImageUseCase>();

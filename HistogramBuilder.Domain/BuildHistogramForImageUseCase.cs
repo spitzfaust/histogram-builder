@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -14,7 +15,7 @@ namespace HistogramBuilder.Domain
         {
             this.histogramBuildOptions = histogramBuildOptions;
         }
-        
+
         public async Task<RgbHistogram> Execute(Image image)
         {
             var (reds, greens, blues) = image.Pixels.Aggregate((new List<byte>(), new List<byte>(), new List<byte>()),
@@ -38,7 +39,13 @@ namespace HistogramBuilder.Domain
 
         private Task<Histogram> BuildHistogram(IEnumerable<byte> pixels, CancellationToken cancellationToken)
         {
-            var tonalValueCounts = pixels.AsParallel()
+
+            var source = histogramBuildOptions.UsePartitioning
+                ? Partitioner.Create(pixels).AsParallel()
+                : pixels.AsParallel();
+
+            var tonalValueCounts = source
+                .WithDegreeOfParallelism(histogramBuildOptions.DegreeOfParallelism)
                 .GroupBy(pixel => pixel)
                 .ToDictionary(g => g.Key, g => g.Count());
 
