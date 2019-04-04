@@ -37,11 +37,11 @@ namespace HistogramBuilder.Domain
             return new RgbHistogram(await redHistogramTask, await greenHistogramTask, await blueHistogramTask);
         }
 
-        private Task<Histogram> BuildHistogram(IEnumerable<byte> pixels, CancellationToken cancellationToken)
+        private Task<Histogram> BuildHistogram(IList<byte> pixels, CancellationToken cancellationToken)
         {
 
             var source = histogramBuildOptions.UsePartitioning
-                ? Partitioner.Create(pixels).AsParallel()
+                ? Partitioner.Create(pixels, false).AsParallel()
                 : pixels.AsParallel();
 
             var tonalValueCounts = source

@@ -21,8 +21,8 @@ namespace HistogramBuilder.Benchmarks
     }
     [HtmlExporter]
     [CsvMeasurementsExporter]
+    [CsvExporter]
     [MarkdownExporter]
-    [RPlotExporter]
     [RankColumn(NumeralSystem.Arabic)]
     [RankColumn(NumeralSystem.Stars)]
     public class BenchmarkHarness
@@ -58,77 +58,77 @@ namespace HistogramBuilder.Benchmarks
         //}
 
         [Benchmark(Baseline = true)]
-        public async Task P_1_true()
+        public async Task P_1_T()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(1, true));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_1_false()
+        public async Task P_1_F()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(1, false));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_2_true()
+        public async Task P_2_T()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(2, true));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_2_false()
+        public async Task P_2_F()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(2, false));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_4_true()
+        public async Task P_4_T()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(4, true));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_4_false()
+        public async Task P_4_F()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(4, false));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_8_true()
+        public async Task P_8_T()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(8, true));
             await uc.Execute(testImage);
         }
         [Benchmark]
-        public async Task P_8_false()
+        public async Task P_8_F()
         {
             var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(8, false));
             await uc.Execute(testImage);
         }
-        [Benchmark]
-        public async Task P_10_true()
-        {
-            var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(10, true));
-            await uc.Execute(testImage);
-        }
-        [Benchmark]
-        public async Task P_10_false()
-        {
-            var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(10, false));
-            await uc.Execute(testImage);
-        }
-        [Benchmark]
-        public async Task P_12_true()
-        {
-            var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(12, true));
-            await uc.Execute(testImage);
-        }
-        [Benchmark]
-        public async Task P_12_false()
-        {
-            var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(12, false));
-            await uc.Execute(testImage);
-        }
+        //[Benchmark]
+        //public async Task P_10_T()
+        //{
+        //    var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(10, true));
+        //    await uc.Execute(testImage);
+        //}
+        //[Benchmark]
+        //public async Task P_10_F()
+        //{
+        //    var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(10, false));
+        //    await uc.Execute(testImage);
+        //}
+        //[Benchmark]
+        //public async Task P_12_T()
+        //{
+        //    var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(12, true));
+        //    await uc.Execute(testImage);
+        //}
+        //[Benchmark]
+        //public async Task P_12_F()
+        //{
+        //    var uc = new BuildHistogramForImageUseCase(new HistogramBuildOptions(12, false));
+        //    await uc.Execute(testImage);
+        //}
 
     }
 }
