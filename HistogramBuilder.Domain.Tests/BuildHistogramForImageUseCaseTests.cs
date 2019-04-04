@@ -11,15 +11,13 @@ namespace HistogramBuilder.Domain.Tests
     {
         private BuildHistogramForImageUseCase sut;
 
-        public BuildHistogramForImageUseCaseTests()
-        {
-            sut = new BuildHistogramForImageUseCase(new HistogramBuildOptions(1));
-        }
 
         [Fact]
-        public async Task ItShallCreateAHistogram()
+        public async Task ItShallCreateAHistogramWithoutPartitioning()
         {
+
             // Given
+            sut = new BuildHistogramForImageUseCase(new HistogramBuildOptions(1, false));
             var image = new Image(new[]
             {
                 new RgbPixel(1, 2, 3),
@@ -36,6 +34,30 @@ namespace HistogramBuilder.Domain.Tests
                 new Histogram(new Dictionary<byte, int> {{1, 4}}),
                 new Histogram(new Dictionary<byte, int> {{2, 4}}),
                 new Histogram(new Dictionary<byte, int> {{3, 4}}));
+            actual.Should().BeEquivalentTo(expected);
+        }
+        [Fact]
+        public async Task ItShallCreateAHistogramWithPartitioning()
+        {
+
+            // Given
+            sut = new BuildHistogramForImageUseCase(new HistogramBuildOptions(1, true));
+            var image = new Image(new[]
+            {
+                new RgbPixel(1, 2, 3),
+                new RgbPixel(1, 2, 3),
+                new RgbPixel(1, 2, 3),
+                new RgbPixel(1, 2, 3),
+            });
+
+            // When
+            var actual = await sut.Execute(image);
+
+            // Then
+            var expected = new RgbHistogram(
+                new Histogram(new Dictionary<byte, int> { { 1, 4 } }),
+                new Histogram(new Dictionary<byte, int> { { 2, 4 } }),
+                new Histogram(new Dictionary<byte, int> { { 3, 4 } }));
             actual.Should().BeEquivalentTo(expected);
         }
     }
